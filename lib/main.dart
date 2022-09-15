@@ -33,31 +33,53 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: Center(
+      appBar: AppBar(
+        backgroundColor: Colors.brown[300],
+      ),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            fit: BoxFit.cover,
+            opacity: 150,
+            image: AssetImage('images/2.jpg'),
+          ),
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              "Choose a Course : ",
-              style: TextStyle(
-                fontSize: 50,
+            Center(
+              child: Card(
+                color: Colors.brown[300],
+                child: Text(
+                  "Welcome to our cafe app ",
+                  style: TextStyle(
+                      fontSize: 35,
+                      color: Colors.brown[700],
+                      fontWeight: FontWeight.bold,
+                      fontStyle: FontStyle.italic),
+                ),
               ),
+            ),
+            Divider(
+              height: 20,
             ),
             ElevatedButton(
               onPressed: (() {
                 setState(() {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return Math();
+                    return Data();
                   }));
                 });
               }),
               child: const Text(
-                "Math classPage",
+                "Choose visit day",
                 style: TextStyle(
                   fontSize: 20,
                 ),
               ),
+            ),
+            Divider(
+              height: 20,
             ),
             ElevatedButton(
               onPressed: (() {
@@ -68,7 +90,7 @@ class _HomeState extends State<Home> {
                 });
               }),
               child: const Text(
-                "English classPage",
+                "Fill your information",
                 style: TextStyle(
                   fontSize: 20,
                 ),
